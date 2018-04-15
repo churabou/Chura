@@ -72,7 +72,7 @@ class MainMenu: BaseView {
     
     fileprivate lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .vertical
+        layout.scrollDirection = .horizontal
         let v = UICollectionView(frame: .zero, collectionViewLayout: layout)
         v.backgroundColor = .green
         v.dataSource = self
@@ -104,7 +104,7 @@ extension MainMenu: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         // Sketchのレイアウト比率に合わせる / w320px: 140x190
         
-        let s = bounds.height/2
+        let s = bounds.height/1.8
         return CGSize(width: s-10, height: s-10)
     }
     
