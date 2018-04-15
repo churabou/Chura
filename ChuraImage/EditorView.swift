@@ -8,10 +8,23 @@
 
 import UIKit
 
+protocol EditorViewDelegate: class {
+    func didSelectDone()
+    func didSelectCancel()
+}
+
 class EditorView: BaseView {
     
+    weak var delegate: EditorViewDelegate?
     internal var menuView: UIView = UIView()
     internal var imageView: UIImageView = UIImageView()
+    
+    //Viewじゃない。
+    internal var image: UIImage = UIImage() {
+        didSet {
+            update(image: image)
+        }
+    }
     
     func update(image: UIImage) {
         imageView.image = image
@@ -23,6 +36,7 @@ class EditorView: BaseView {
 
     fileprivate lazy var titleLabel: UILabel = {
         let l = UILabel()
+        l.setAutoLayout()
         l.text = "画像編集"
         l.textColor = .white
         l.textAlignment = .center
@@ -35,6 +49,7 @@ class EditorView: BaseView {
     
     fileprivate lazy var doneButton: UIButton = {
         let b = UIButton()
+        b.setAutoLayout()
         b.setTitle("完了", for: .normal)
         b.setTitleColor(.white, for: .normal)
         b.addTarget(self, action: #selector(actionDone), for: .touchUpInside)
@@ -42,11 +57,12 @@ class EditorView: BaseView {
     }()
     
     @objc private func actionDone() {
-        
+        delegate?.didSelectDone()
     }
     
     fileprivate lazy var cancelButton: UIButton = {
         let b = UIButton()
+        b.setAutoLayout()
         b.setTitle("キャンセル", for: .normal)
         b.setTitleColor(.white, for: .normal)
         b.addTarget(self, action: #selector(actionCancel), for: .touchUpInside)
@@ -54,20 +70,26 @@ class EditorView: BaseView {
     }()
     
     @objc private func actionCancel() {
-        
+        delegate?.didSelectCancel()
     }
     
     override func initializeView() {
+        imageWrapperView.setAutoLayout()
         imageWrapperView.backgroundColor = .orange
         addSubview(imageWrapperView)
+        
+        imageView.setAutoLayout()
         imageWrapperView.addSubview(imageView)
         
+        topWrapperView.setAutoLayout()
         topWrapperView.backgroundColor = .red
         addSubview(topWrapperView)
 
         topWrapperView.addSubview(titleLabel)
         topWrapperView.addSubview(doneButton)
         topWrapperView.addSubview(cancelButton)
+        
+        menuView.setAutoLayout()
         menuView.backgroundColor = .cyan
         addSubview(menuView)
     }
