@@ -9,13 +9,17 @@
 /* Begin PBXBuildFile section */
 		3ACB0F36B49EC68EC253DB33 /* Pods_ChuraImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6595068D3D8E6016C186196 /* Pods_ChuraImage.framework */; };
 		C98351962082E79B00818DC0 /* chura.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C98351952082E79B00818DC0 /* chura.jpg */; };
-		C98351982082EE1100818DC0 /* BaseTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98351972082EE1100818DC0 /* BaseTool.swift */; };
-		C983519A2082F26C00818DC0 /* MainMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98351992082F26C00818DC0 /* MainMenu.swift */; };
-		C983519E2082F45B00818DC0 /* DrawTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = C983519C2082F45B00818DC0 /* DrawTool.swift */; };
-		C983519F2082F45B00818DC0 /* DrawToolMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C983519D2082F45B00818DC0 /* DrawToolMenuView.swift */; };
-		C98351A22082F56600818DC0 /* RadiusPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98351A02082F56600818DC0 /* RadiusPanel.swift */; };
-		C98351A32082F56600818DC0 /* ColorPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98351A12082F56600818DC0 /* ColorPanel.swift */; };
-		C98351A52082FDAF00818DC0 /* EditTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98351A42082FDAF00818DC0 /* EditTool.swift */; };
+		C98351B7208301DE00818DC0 /* BlurTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98351A9208301DE00818DC0 /* BlurTool.swift */; };
+		C98351B8208301DE00818DC0 /* BlurToolMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98351AA208301DE00818DC0 /* BlurToolMenuView.swift */; };
+		C98351B9208301DE00818DC0 /* BaseTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98351AC208301DE00818DC0 /* BaseTool.swift */; };
+		C98351BA208301DE00818DC0 /* ColorPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98351AD208301DE00818DC0 /* ColorPanel.swift */; };
+		C98351BB208301DE00818DC0 /* RadiusPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98351AE208301DE00818DC0 /* RadiusPanel.swift */; };
+		C98351BC208301DE00818DC0 /* DrawTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98351B0208301DE00818DC0 /* DrawTool.swift */; };
+		C98351BD208301DE00818DC0 /* DrawToolMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98351B1208301DE00818DC0 /* DrawToolMenuView.swift */; };
+		C98351BE208301DE00818DC0 /* EditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98351B2208301DE00818DC0 /* EditorView.swift */; };
+		C98351BF208301DE00818DC0 /* EditTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98351B3208301DE00818DC0 /* EditTool.swift */; };
+		C98351C0208301DE00818DC0 /* MainMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98351B4208301DE00818DC0 /* MainMenu.swift */; };
+		C98351C1208301DE00818DC0 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98351B6208301DE00818DC0 /* UIImage+Extension.swift */; };
 		C9A84FB520823BC50002A42D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A84FB420823BC50002A42D /* AppDelegate.swift */; };
 		C9A84FB720823BC50002A42D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A84FB620823BC50002A42D /* ViewController.swift */; };
 		C9A84FBA20823BC50002A42D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9A84FB820823BC50002A42D /* Main.storyboard */; };
@@ -23,10 +27,6 @@
 		C9A84FBF20823BC50002A42D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9A84FBD20823BC50002A42D /* LaunchScreen.storyboard */; };
 		C9A84FCA20823BC50002A42D /* ChuraImageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A84FC920823BC50002A42D /* ChuraImageTests.swift */; };
 		C9A84FD520823BC50002A42D /* ChuraImageUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A84FD420823BC50002A42D /* ChuraImageUITests.swift */; };
-		C9A84FE32082D7190002A42D /* EditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A84FE22082D7190002A42D /* EditorView.swift */; };
-		C9A84FE72082E4E30002A42D /* BlurTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A84FE52082E4E30002A42D /* BlurTool.swift */; };
-		C9A84FE82082E4E30002A42D /* BlurToolMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A84FE62082E4E30002A42D /* BlurToolMenuView.swift */; };
-		C9A84FEA2082E5910002A42D /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A84FE92082E5900002A42D /* UIImage+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,13 +50,17 @@
 		8CB969B89D513328CD90626A /* Pods-ChuraImage.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChuraImage.release.xcconfig"; path = "Pods/Target Support Files/Pods-ChuraImage/Pods-ChuraImage.release.xcconfig"; sourceTree = "<group>"; };
 		BE2ED5E065C71E75663EFB74 /* Pods-ChuraImage.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChuraImage.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ChuraImage/Pods-ChuraImage.debug.xcconfig"; sourceTree = "<group>"; };
 		C98351952082E79B00818DC0 /* chura.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = chura.jpg; sourceTree = SOURCE_ROOT; };
-		C98351972082EE1100818DC0 /* BaseTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTool.swift; sourceTree = "<group>"; };
-		C98351992082F26C00818DC0 /* MainMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenu.swift; sourceTree = "<group>"; };
-		C983519C2082F45B00818DC0 /* DrawTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawTool.swift; sourceTree = "<group>"; };
-		C983519D2082F45B00818DC0 /* DrawToolMenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawToolMenuView.swift; sourceTree = "<group>"; };
-		C98351A02082F56600818DC0 /* RadiusPanel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RadiusPanel.swift; path = Common/RadiusPanel.swift; sourceTree = "<group>"; };
-		C98351A12082F56600818DC0 /* ColorPanel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ColorPanel.swift; path = Common/ColorPanel.swift; sourceTree = "<group>"; };
-		C98351A42082FDAF00818DC0 /* EditTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTool.swift; sourceTree = "<group>"; };
+		C98351A9208301DE00818DC0 /* BlurTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlurTool.swift; sourceTree = "<group>"; };
+		C98351AA208301DE00818DC0 /* BlurToolMenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlurToolMenuView.swift; sourceTree = "<group>"; };
+		C98351AC208301DE00818DC0 /* BaseTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTool.swift; sourceTree = "<group>"; };
+		C98351AD208301DE00818DC0 /* ColorPanel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorPanel.swift; sourceTree = "<group>"; };
+		C98351AE208301DE00818DC0 /* RadiusPanel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadiusPanel.swift; sourceTree = "<group>"; };
+		C98351B0208301DE00818DC0 /* DrawTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawTool.swift; sourceTree = "<group>"; };
+		C98351B1208301DE00818DC0 /* DrawToolMenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawToolMenuView.swift; sourceTree = "<group>"; };
+		C98351B2208301DE00818DC0 /* EditorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditorView.swift; sourceTree = "<group>"; };
+		C98351B3208301DE00818DC0 /* EditTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditTool.swift; sourceTree = "<group>"; };
+		C98351B4208301DE00818DC0 /* MainMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenu.swift; sourceTree = "<group>"; };
+		C98351B6208301DE00818DC0 /* UIImage+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		C9A84FB120823BC50002A42D /* ChuraImage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChuraImage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9A84FB420823BC50002A42D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C9A84FB620823BC50002A42D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -70,10 +74,6 @@
 		C9A84FD020823BC50002A42D /* ChuraImageUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChuraImageUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9A84FD420823BC50002A42D /* ChuraImageUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChuraImageUITests.swift; sourceTree = "<group>"; };
 		C9A84FD620823BC50002A42D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C9A84FE22082D7190002A42D /* EditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorView.swift; sourceTree = "<group>"; };
-		C9A84FE52082E4E30002A42D /* BlurTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlurTool.swift; sourceTree = "<group>"; };
-		C9A84FE62082E4E30002A42D /* BlurToolMenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlurToolMenuView.swift; sourceTree = "<group>"; };
-		C9A84FE92082E5900002A42D /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		F6595068D3D8E6016C186196 /* Pods_ChuraImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChuraImage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -120,18 +120,68 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		C983519B2082F45B00818DC0 /* Draw */ = {
+		C98351A6208301DE00818DC0 /* Class */ = {
 			isa = PBXGroup;
 			children = (
-				C983519C2082F45B00818DC0 /* DrawTool.swift */,
-				C983519D2082F45B00818DC0 /* DrawToolMenuView.swift */,
+				C98351A7208301DE00818DC0 /* ChuraImage */,
+				C98351B5208301DE00818DC0 /* Extension */,
+			);
+			path = Class;
+			sourceTree = SOURCE_ROOT;
+		};
+		C98351A7208301DE00818DC0 /* ChuraImage */ = {
+			isa = PBXGroup;
+			children = (
+				C98351A8208301DE00818DC0 /* Blur */,
+				C98351AB208301DE00818DC0 /* Common */,
+				C98351AF208301DE00818DC0 /* Draw */,
+				C98351B2208301DE00818DC0 /* EditorView.swift */,
+				C98351B3208301DE00818DC0 /* EditTool.swift */,
+				C98351B4208301DE00818DC0 /* MainMenu.swift */,
+			);
+			path = ChuraImage;
+			sourceTree = "<group>";
+		};
+		C98351A8208301DE00818DC0 /* Blur */ = {
+			isa = PBXGroup;
+			children = (
+				C98351A9208301DE00818DC0 /* BlurTool.swift */,
+				C98351AA208301DE00818DC0 /* BlurToolMenuView.swift */,
+			);
+			path = Blur;
+			sourceTree = "<group>";
+		};
+		C98351AB208301DE00818DC0 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				C98351AC208301DE00818DC0 /* BaseTool.swift */,
+				C98351AD208301DE00818DC0 /* ColorPanel.swift */,
+				C98351AE208301DE00818DC0 /* RadiusPanel.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		C98351AF208301DE00818DC0 /* Draw */ = {
+			isa = PBXGroup;
+			children = (
+				C98351B0208301DE00818DC0 /* DrawTool.swift */,
+				C98351B1208301DE00818DC0 /* DrawToolMenuView.swift */,
 			);
 			path = Draw;
+			sourceTree = "<group>";
+		};
+		C98351B5208301DE00818DC0 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				C98351B6208301DE00818DC0 /* UIImage+Extension.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		C9A84FA820823BC50002A42D = {
 			isa = PBXGroup;
 			children = (
+				C98351A6208301DE00818DC0 /* Class */,
 				C9A84FB320823BC50002A42D /* ChuraImage */,
 				C9A84FC820823BC50002A42D /* ChuraImageTests */,
 				C9A84FD320823BC50002A42D /* ChuraImageUITests */,
@@ -156,16 +206,7 @@
 			children = (
 				C9A84FB420823BC50002A42D /* AppDelegate.swift */,
 				C9A84FB620823BC50002A42D /* ViewController.swift */,
-				C98351A12082F56600818DC0 /* ColorPanel.swift */,
-				C98351A42082FDAF00818DC0 /* EditTool.swift */,
-				C98351A02082F56600818DC0 /* RadiusPanel.swift */,
-				C983519B2082F45B00818DC0 /* Draw */,
-				C9A84FE42082E4E30002A42D /* Blur */,
-				C98351992082F26C00818DC0 /* MainMenu.swift */,
-				C98351972082EE1100818DC0 /* BaseTool.swift */,
 				C98351952082E79B00818DC0 /* chura.jpg */,
-				C9A84FE22082D7190002A42D /* EditorView.swift */,
-				C9A84FE92082E5900002A42D /* UIImage+Extension.swift */,
 				C9A84FB820823BC50002A42D /* Main.storyboard */,
 				C9A84FBB20823BC50002A42D /* Assets.xcassets */,
 				C9A84FBD20823BC50002A42D /* LaunchScreen.storyboard */,
@@ -190,15 +231,6 @@
 				C9A84FD620823BC50002A42D /* Info.plist */,
 			);
 			path = ChuraImageUITests;
-			sourceTree = "<group>";
-		};
-		C9A84FE42082E4E30002A42D /* Blur */ = {
-			isa = PBXGroup;
-			children = (
-				C9A84FE52082E4E30002A42D /* BlurTool.swift */,
-				C9A84FE62082E4E30002A42D /* BlurToolMenuView.swift */,
-			);
-			path = Blur;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -393,19 +425,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C983519E2082F45B00818DC0 /* DrawTool.swift in Sources */,
-				C9A84FE72082E4E30002A42D /* BlurTool.swift in Sources */,
-				C9A84FE32082D7190002A42D /* EditorView.swift in Sources */,
+				C98351C1208301DE00818DC0 /* UIImage+Extension.swift in Sources */,
+				C98351BF208301DE00818DC0 /* EditTool.swift in Sources */,
+				C98351BA208301DE00818DC0 /* ColorPanel.swift in Sources */,
+				C98351BB208301DE00818DC0 /* RadiusPanel.swift in Sources */,
+				C98351B8208301DE00818DC0 /* BlurToolMenuView.swift in Sources */,
 				C9A84FB720823BC50002A42D /* ViewController.swift in Sources */,
-				C983519A2082F26C00818DC0 /* MainMenu.swift in Sources */,
-				C98351A52082FDAF00818DC0 /* EditTool.swift in Sources */,
-				C983519F2082F45B00818DC0 /* DrawToolMenuView.swift in Sources */,
-				C98351A32082F56600818DC0 /* ColorPanel.swift in Sources */,
-				C9A84FEA2082E5910002A42D /* UIImage+Extension.swift in Sources */,
-				C9A84FE82082E4E30002A42D /* BlurToolMenuView.swift in Sources */,
+				C98351B7208301DE00818DC0 /* BlurTool.swift in Sources */,
+				C98351BD208301DE00818DC0 /* DrawToolMenuView.swift in Sources */,
+				C98351C0208301DE00818DC0 /* MainMenu.swift in Sources */,
+				C98351BC208301DE00818DC0 /* DrawTool.swift in Sources */,
+				C98351B9208301DE00818DC0 /* BaseTool.swift in Sources */,
 				C9A84FB520823BC50002A42D /* AppDelegate.swift in Sources */,
-				C98351982082EE1100818DC0 /* BaseTool.swift in Sources */,
-				C98351A22082F56600818DC0 /* RadiusPanel.swift in Sources */,
+				C98351BE208301DE00818DC0 /* EditorView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
