@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3ACB0F36B49EC68EC253DB33 /* Pods_ChuraImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6595068D3D8E6016C186196 /* Pods_ChuraImage.framework */; };
 		C98351962082E79B00818DC0 /* chura.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C98351952082E79B00818DC0 /* chura.jpg */; };
+		C98351982082EE1100818DC0 /* BaseTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98351972082EE1100818DC0 /* BaseTool.swift */; };
 		C9A84FB520823BC50002A42D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A84FB420823BC50002A42D /* AppDelegate.swift */; };
 		C9A84FB720823BC50002A42D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A84FB620823BC50002A42D /* ViewController.swift */; };
 		C9A84FBA20823BC50002A42D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9A84FB820823BC50002A42D /* Main.storyboard */; };
@@ -43,6 +44,7 @@
 		8CB969B89D513328CD90626A /* Pods-ChuraImage.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChuraImage.release.xcconfig"; path = "Pods/Target Support Files/Pods-ChuraImage/Pods-ChuraImage.release.xcconfig"; sourceTree = "<group>"; };
 		BE2ED5E065C71E75663EFB74 /* Pods-ChuraImage.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChuraImage.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ChuraImage/Pods-ChuraImage.debug.xcconfig"; sourceTree = "<group>"; };
 		C98351952082E79B00818DC0 /* chura.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = chura.jpg; sourceTree = SOURCE_ROOT; };
+		C98351972082EE1100818DC0 /* BaseTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTool.swift; sourceTree = "<group>"; };
 		C9A84FB120823BC50002A42D /* ChuraImage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChuraImage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9A84FB420823BC50002A42D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C9A84FB620823BC50002A42D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 			children = (
 				C9A84FB420823BC50002A42D /* AppDelegate.swift */,
 				C9A84FB620823BC50002A42D /* ViewController.swift */,
+				C98351972082EE1100818DC0 /* BaseTool.swift */,
 				C98351952082E79B00818DC0 /* chura.jpg */,
 				C9A84FE42082E4E30002A42D /* Blur */,
 				C9A84FE22082D7190002A42D /* EditorView.swift */,
@@ -370,6 +373,7 @@
 				C9A84FEA2082E5910002A42D /* UIImage+Extension.swift in Sources */,
 				C9A84FE82082E4E30002A42D /* BlurToolMenuView.swift in Sources */,
 				C9A84FB520823BC50002A42D /* AppDelegate.swift in Sources */,
+				C98351982082EE1100818DC0 /* BaseTool.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
