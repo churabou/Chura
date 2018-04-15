@@ -9,9 +9,9 @@
 import UIKit
 
 class ViewController: UIViewController {
-    var editorView = EditorView()
-    var mainMenu = MainMenu()
-    var editTool: EditTool!
+    fileprivate var editorView = EditorView()
+    fileprivate var mainMenu = MainMenu()
+    fileprivate var editTool: EditTool!
     
     override func viewDidLoad() {
         super.viewDidLoad()
