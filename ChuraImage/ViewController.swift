@@ -9,45 +9,131 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    var v = EditorView()
+    var mainMenu = MainMenu()
+    var blurTool: BlurTool!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        let v = MenuView()
+        v = EditorView()
+        v.delegate = self
         view.addSubview(v)
         v.snp.makeConstraints { (make) in
-            make.left.right.equalToSuperview()
-            make.height.equalTo(180)
-           make.centerY.equalToSuperview()
+            make.edges.equalToSuperview()
         }
-
         
-        // Do any additional setup after loading the view, typically from a nib.
+        v.image = UIImage(named: "chura.jpg")!
+//        blurTool = BlurTool(v)
+        
+        v.menuView.addSubview(mainMenu)
+        
+        mainMenu.snp.makeConstraints { (make) in
+            make.edges.equalToSuperview()
+        }
     }
+    
+}
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+extension ViewController: EditorViewDelegate {
+    
+    func didSelectCancel() {
+        print("キャンセル")
+        blurTool.setUp()
+    }
+    
+    func didSelectDone() {
+        print("完了")
     }
 }
+
+
 
 import SnapKit
 
-
-class BaseView: UIView {
+class CollectionCell: UICollectionViewCell {
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        initializeView()
+    fileprivate var imageView = UIImageView()
+    func setUp() {
+        backgroundColor = .red
+        imageView.backgroundColor = .blue
+        contentView.addSubview(imageView)
     }
     
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    override func layoutSubviews() {
+        imageView.snp.makeConstraints { (make) in
+            make.top.left.equalTo(5)
+            make.right.bottom.equalTo(-5)
+        }
     }
-    
-    func initializeView() {}
 }
+
+class MainMenu: BaseView {
+    
+    fileprivate lazy var collectionView: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .vertical
+        let v = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        v.backgroundColor = .green
+        v.dataSource = self
+        v.delegate = self
+        v.alwaysBounceVertical = false
+        v.scrollIndicatorInsets = .zero
+        v.register(CollectionCell.self, forCellWithReuseIdentifier: "cell")
+        return v
+    }()
+    
+    override func initializeView() {
+        
+        addSubview(collectionView)
+    }
+    
+    override func updateConstraints() {
+        super.updateConstraints()
+        
+        collectionView.snp.makeConstraints { (make) in
+            make.edges.equalToSuperview()
+        }
+    }
+}
+
+
+
+extension MainMenu: UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        // Sketchのレイアウト比率に合わせる / w320px: 140x190
+        
+        let s = bounds.height/2
+        return CGSize(width: s-10, height: s-10)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
+    }
+    
+}
+
+extension MainMenu: UICollectionViewDelegate, UICollectionViewDataSource {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 12
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? CollectionCell else {
+            return UICollectionViewCell()
+        }
+        
+        cell.setUp()
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print(indexPath)
+    }
+}
+
 
 
 class MenuView: SegmentMenuView {
@@ -76,7 +162,7 @@ class MenuView: SegmentMenuView {
         doneButton.snp.makeConstraints { (make) in
             make.top.equalTo(5)
             make.width.equalTo(60)
-            make.height.equalTo(30)
+            make.height.equalTo(20)
             make.right.equalToSuperview().offset(-10)
         }
     }
