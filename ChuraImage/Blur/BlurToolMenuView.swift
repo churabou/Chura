@@ -15,12 +15,12 @@ class BlurToolMenuView: BaseView, MenuViewProtocol {
         sender.isSelected = true
         self.delegate?.onClickMenuButton(sender)
     }
-    
-    override func initializeView() {
-    
-//        backgroundColor = .editorMenuColor
-        let centerX = UIScreen.main.bounds.width / 2
-        wrapperView.frame = CGRect(x: centerX-75, y: 25, width: 150, height: 50)
+
+    override func draw(_ rect: CGRect) {
+        
+        let centerX = bounds.width / 2
+        let centerY = bounds.height / 2
+        wrapperView.frame = CGRect(x: centerX-75, y: centerY-25, width: 150, height: 50)
         addSubview(wrapperView)
         for i in 0..<3 {
             let button = RadiusButton()
