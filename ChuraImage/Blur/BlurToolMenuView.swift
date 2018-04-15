@@ -35,33 +35,3 @@ class BlurToolMenuView: BaseView, MenuViewProtocol {
     }
 }
 
-
-class RadiusButton: UIButton {
-    
-    override var isSelected: Bool {
-        didSet {
-            circleLayer.borderColor = isSelected ? hilightColor.cgColor : UIColor.white.cgColor
-        }
-    }
-    
-    var hilightColor = UIColor.white {
-        didSet {
-            if isSelected { circleLayer.borderColor = hilightColor.cgColor  }
-        }
-    }
-    
-    var circleLayer = CALayer()
-    
-    func setUp(size: CGFloat) {
-        circleLayer.cornerRadius = size/2
-        circleLayer.backgroundColor = UIColor.red.cgColor
-        circleLayer.borderColor = UIColor.white.cgColor
-        circleLayer.borderWidth = 2
-        
-        let x = layer.frame.width / 2
-        let y = layer.frame.height / 2
-        circleLayer.frame.origin = CGPoint(x: x-size/2, y: y-size/2)
-        circleLayer.frame.size = CGSize(width: size, height: size)
-        layer.addSublayer(circleLayer)
-    }
-}

@@ -10,6 +10,11 @@
 		3ACB0F36B49EC68EC253DB33 /* Pods_ChuraImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6595068D3D8E6016C186196 /* Pods_ChuraImage.framework */; };
 		C98351962082E79B00818DC0 /* chura.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C98351952082E79B00818DC0 /* chura.jpg */; };
 		C98351982082EE1100818DC0 /* BaseTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98351972082EE1100818DC0 /* BaseTool.swift */; };
+		C983519A2082F26C00818DC0 /* MainMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98351992082F26C00818DC0 /* MainMenu.swift */; };
+		C983519E2082F45B00818DC0 /* DrawTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = C983519C2082F45B00818DC0 /* DrawTool.swift */; };
+		C983519F2082F45B00818DC0 /* DrawToolMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C983519D2082F45B00818DC0 /* DrawToolMenuView.swift */; };
+		C98351A22082F56600818DC0 /* RadiusPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98351A02082F56600818DC0 /* RadiusPanel.swift */; };
+		C98351A32082F56600818DC0 /* ColorPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98351A12082F56600818DC0 /* ColorPanel.swift */; };
 		C9A84FB520823BC50002A42D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A84FB420823BC50002A42D /* AppDelegate.swift */; };
 		C9A84FB720823BC50002A42D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A84FB620823BC50002A42D /* ViewController.swift */; };
 		C9A84FBA20823BC50002A42D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9A84FB820823BC50002A42D /* Main.storyboard */; };
@@ -45,6 +50,11 @@
 		BE2ED5E065C71E75663EFB74 /* Pods-ChuraImage.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChuraImage.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ChuraImage/Pods-ChuraImage.debug.xcconfig"; sourceTree = "<group>"; };
 		C98351952082E79B00818DC0 /* chura.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = chura.jpg; sourceTree = SOURCE_ROOT; };
 		C98351972082EE1100818DC0 /* BaseTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTool.swift; sourceTree = "<group>"; };
+		C98351992082F26C00818DC0 /* MainMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenu.swift; sourceTree = "<group>"; };
+		C983519C2082F45B00818DC0 /* DrawTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawTool.swift; sourceTree = "<group>"; };
+		C983519D2082F45B00818DC0 /* DrawToolMenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawToolMenuView.swift; sourceTree = "<group>"; };
+		C98351A02082F56600818DC0 /* RadiusPanel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RadiusPanel.swift; path = Common/RadiusPanel.swift; sourceTree = "<group>"; };
+		C98351A12082F56600818DC0 /* ColorPanel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ColorPanel.swift; path = Common/ColorPanel.swift; sourceTree = "<group>"; };
 		C9A84FB120823BC50002A42D /* ChuraImage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChuraImage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9A84FB420823BC50002A42D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C9A84FB620823BC50002A42D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -108,6 +118,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		C983519B2082F45B00818DC0 /* Draw */ = {
+			isa = PBXGroup;
+			children = (
+				C983519C2082F45B00818DC0 /* DrawTool.swift */,
+				C983519D2082F45B00818DC0 /* DrawToolMenuView.swift */,
+			);
+			path = Draw;
+			sourceTree = "<group>";
+		};
 		C9A84FA820823BC50002A42D = {
 			isa = PBXGroup;
 			children = (
@@ -135,6 +154,10 @@
 			children = (
 				C9A84FB420823BC50002A42D /* AppDelegate.swift */,
 				C9A84FB620823BC50002A42D /* ViewController.swift */,
+				C98351A12082F56600818DC0 /* ColorPanel.swift */,
+				C98351A02082F56600818DC0 /* RadiusPanel.swift */,
+				C983519B2082F45B00818DC0 /* Draw */,
+				C98351992082F26C00818DC0 /* MainMenu.swift */,
 				C98351972082EE1100818DC0 /* BaseTool.swift */,
 				C98351952082E79B00818DC0 /* chura.jpg */,
 				C9A84FE42082E4E30002A42D /* Blur */,
@@ -367,13 +390,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C983519E2082F45B00818DC0 /* DrawTool.swift in Sources */,
 				C9A84FE72082E4E30002A42D /* BlurTool.swift in Sources */,
 				C9A84FE32082D7190002A42D /* EditorView.swift in Sources */,
 				C9A84FB720823BC50002A42D /* ViewController.swift in Sources */,
+				C983519A2082F26C00818DC0 /* MainMenu.swift in Sources */,
+				C983519F2082F45B00818DC0 /* DrawToolMenuView.swift in Sources */,
+				C98351A32082F56600818DC0 /* ColorPanel.swift in Sources */,
 				C9A84FEA2082E5910002A42D /* UIImage+Extension.swift in Sources */,
 				C9A84FE82082E4E30002A42D /* BlurToolMenuView.swift in Sources */,
 				C9A84FB520823BC50002A42D /* AppDelegate.swift in Sources */,
 				C98351982082EE1100818DC0 /* BaseTool.swift in Sources */,
+				C98351A22082F56600818DC0 /* RadiusPanel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
