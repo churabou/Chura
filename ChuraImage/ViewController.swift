@@ -8,48 +8,30 @@
 
 import UIKit
 
-//enum EditTool {
-//    case draw, blur
-//    
-//    var title: String {
-//        switch self {
-//        case draw: return "お絵かき"
-//        case bluer: return "ぼかし"
-//        }
-//    }
-//}
-
 class ViewController: UIViewController {
-    var v = EditorView()
+    var editorView = EditorView()
     var mainMenu = MainMenu()
-    var blurTool: BlurTool!
-    var drawTool: DrawTool!
-    
-    var editTools: [BaseTool] = []
-    var currentTool: BaseTool?
+    var editTool: EditTool!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        v = EditorView()
-        v.delegate = self
-        view.addSubview(v)
-        v.snp.makeConstraints { (make) in
+        editorView = EditorView()
+        editorView.delegate = self
+        view.addSubview(editorView)
+        editorView.snp.makeConstraints { (make) in
             make.edges.equalToSuperview()
         }
         
-        v.image = UIImage(named: "chura.jpg")!
-
-        v.menuView.addSubview(mainMenu)
+        editorView.image = UIImage(named: "chura.jpg")!
+        editorView.menuView.addSubview(mainMenu)
         
         mainMenu.delegate = self
         mainMenu.snp.makeConstraints { (make) in
             make.edges.equalToSuperview()
         }
         
-        blurTool = BlurTool(v)
-        drawTool = DrawTool(v)
-        editTools = [blurTool, drawTool]
+        editTool = EditTool(editorView)
     }
     
 }
@@ -58,7 +40,8 @@ extension ViewController: EditorViewDelegate {
     
     func didSelectCancel() {
         print("キャンセル")
-        currentTool?.cleanUp()
+        editTool.cleanUp()
+        editorView.update(title: "画像編集")
     }
     
     func didSelectDone() {
@@ -69,9 +52,10 @@ extension ViewController: EditorViewDelegate {
 extension ViewController: MainMenuDelegate {
     func didSelectMenu(at: Int) {
         print(at)
-        let index = at % editTools.count
-        currentTool = editTools[index]
-        currentTool?.setUp()
+//        let index =
+        editTool.current =  at % 2 == 0 ? .draw : .blur
+        editorView.update(title: editTool.current.title)
+        editTool.setUp()
     }
 }
 
